@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div>
+            <ul class="navbar">
+                <li><a href="images.html" class="item-navbar">Images</a></li>
+                <li><a href="advanced.html" class="item-navbar">Advanced Search</a></li>
+            </ul>
+        </div>
+        <div class="div-center">
+            <img src="google.png" alt="Google" height="92">
+        </div>
+        <form action="https://google.com/search" method="get">
+            <input type="text" name="q" class="input-search" id="searchInput">
+            <div class="div-center-i">
+                <input type="submit" value="Google Search" class="button-search">
+                <input type="button" value="I'm Feeling Lucky" class="button-search" onclick="feelingLucky()">
+            </div>
+        </form>
+        <script>
+            function feelingLucky() {
+                const query = document.getElementById("searchInput").value;
+                if (query.trim() !== "") {
+                    const luckyURL = "https://www.google.com/search?q=" + encodeURIComponent(query) + "&btnI=1";
+                    window.location.href = luckyURL;
+                }
+            }
+        </script>
+    </body>
+</html>
